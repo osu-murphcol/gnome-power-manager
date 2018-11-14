@@ -81,12 +81,14 @@ enum {
 #define GPM_HISTORY_MINUTE_TEXT			_("10 minutes")
 #define GPM_HISTORY_HOUR_TEXT			_("2 hours")
 #define GPM_HISTORY_HOURS_TEXT			_("6 hours")
+#define GPM_HISTORY_HALFDAY_TEXT		_("12 hours")
 #define GPM_HISTORY_DAY_TEXT			_("1 day")
 #define GPM_HISTORY_WEEK_TEXT			_("1 week")
 
 #define GPM_HISTORY_MINUTE_VALUE		10*60
 #define GPM_HISTORY_HOUR_VALUE			2*60*60
 #define GPM_HISTORY_HOURS_VALUE			6*60*60
+#define GPM_HISTORY_HALFDAY_VALUE		12*60*60
 #define GPM_HISTORY_DAY_VALUE			24*60*60
 #define GPM_HISTORY_WEEK_VALUE			7*24*60*60
 
@@ -1224,6 +1226,8 @@ gpm_stats_range_combo_changed (GtkWidget *widget, gpointer data)
 		history_time = GPM_HISTORY_HOUR_VALUE;
 	else if (g_strcmp0 (value, GPM_HISTORY_HOURS_TEXT) == 0)
 		history_time = GPM_HISTORY_HOURS_VALUE;
+	else if (g_strcmp0 (value, GPM_HISTORY_HALFDAY_TEXT) == 0)
+		history_time = GPM_HISTORY_HALFDAY_VALUE;
 	else if (g_strcmp0 (value, GPM_HISTORY_DAY_TEXT) == 0)
 		history_time = GPM_HISTORY_DAY_VALUE;
 	else if (g_strcmp0 (value, GPM_HISTORY_WEEK_TEXT) == 0)
